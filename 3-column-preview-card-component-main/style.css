@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+:root {
+    --bright-orange: hsl(31, 77%, 52%);
+    --dark-cyan: hsl(184, 100%, 22%);
+    --very-dark-cyan: hsl(179, 100%, 13%);
+
+    --transparent-white: hsla(0, 0%, 100%, 0.75); /*  (paragraphs) */
+    --very-light-gray: hsl(0, 0%, 95%); /* (background, headings, buttons) */
+
+    font-size: 15px;
+}
+
+body {
+    position: relative;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--very-light-gray);
+    color: var(--transparent-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 60%;
+    height: 65%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+    padding: 4em;
+    min-height: 350px;
+}
+
+.container h2 {
+    font-family: 'Big Shoulders Display', cursive;
+    text-transform: uppercase;
+    font-size: 2.8rem;
+    margin: 0.5em 0;
+}
+
+.container p {
+    margin: 1em 0;
+    line-height: 1.7em;
+    font-size: 1.1rem;
+}
+
+.container a {
+    font-size: 1.1;
+    display: inline-block;
+    font-weight: 400;
+    background-color: var(--very-light-gray);
+    padding: 1em 2.5em;
+    border-radius: 2em;
+    position: absolute;
+    bottom: 4em;
+}
+
+.sedans {
+    background-color: var(--bright-orange);
+}
+
+.sedans a {
+    color: var(--bright-orange);
+    text-decoration: none;
+    border: solid var(--very-light-gray) 2px;
+}
+
+.sedans a:hover {
+    background-color: var(--bright-orange);
+    color: var(--very-light-gray);
+
+}
+
+.suvs {
+    background-color: var(--dark-cyan);
+}
+
+.suvs a {
+    color: var(--dark-cyan);
+    text-decoration: none;
+    border: solid var(--very-light-gray) 2px;
+}
+
+.suvs a:hover {
+    color: var(--very-light-gray);
+    background-color: var(--dark-cyan);
+}
+
+.luxury {
+    background-color: var(--very-dark-cyan);
+}
+
+.luxury a {
+    color: var(--very-dark-cyan);
+    text-decoration: none;
+    border: solid var(--very-light-gray) 2px;
+}
+
+.luxury a:hover {
+    color: var(--very-light-gray);
+    background-color: var(--very-dark-cyan);
+}
+
+.attribution {
+    color: #000;
+    position: absolute;
+    bottom: 0;
+}
+
+@media (max-width: 1400px) {
+
+    main {
+        width: 90%;
+    }
+
+    .container a {
+        bottom: 3em;
+    }
+}
+
+@media (max-width: 950px)
+{   
+    body {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+        height: auto;
+    }
+
+    .container p {
+        line-height: 1.7em;
+    }
+
+    main {
+        min-width: 350px;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+}
+
+@media (max-height: 660px) {
+    main {
+        height: 90%;
+    }
+    .container p {
+        margin: 0;
+    }
+    .container {
+        padding-top: 2em;
+    }
+}
