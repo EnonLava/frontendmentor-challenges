@@ -1,0 +1,161 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    font-family: 'Karla', sans-serif;
+    --cyan: hsl(179, 62%, 43%);
+    --bright-yellow: hsl(71, 73%, 54%);
+
+    --light-gray: hsl(204, 43%, 93%);
+    --grayish-blue: hsl(218, 22%, 67%);
+    
+    --outer-padding: 2.5em;
+    --title-bottom: 1em;
+    --grid-radius: 5px;
+
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 2em;
+
+}
+
+h1 {
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+body {
+    position: relative;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--light-gray);
+}
+
+.grid {
+    max-width: 750px;
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr 1fr;
+    background-color: #FFF;
+    border-radius: var(--grid-radius);
+}
+
+.title-grid {
+    grid-column-start: span 2;
+    padding: var(--outer-padding);
+}
+
+.grid-title {
+    margin-bottom: var(--title-bottom);
+    color: var(--cyan);
+}
+
+.grid-subtitle {
+    margin-bottom: 0.5em;
+    color: var(--bright-yellow)
+}
+
+.title-description {
+    color: var(--grayish-blue);
+}
+
+.subscription-grid {
+    background-color: var(--cyan);
+    color: #FFF;
+    padding: var(--outer-padding);
+    border-bottom-left-radius: var(--grid-radius);
+}
+
+.subscription-title {
+    margin-bottom: var(--title-bottom);
+}
+
+.price {
+    font-size: 2rem;
+    display: flex;
+    margin: 0.5em 0;
+    font-weight: 700;
+}
+
+.price-span {
+    font-size: 1rem;
+    align-items: center;
+    padding-left: 1em;
+    opacity: 80%;
+    font-weight: 400;
+}
+
+
+.subscription-description {
+    margin-bottom: 1.5em;
+}
+
+.sign-up-button {
+    font-weight: 700;
+    background-color: var(--bright-yellow);
+    display: block;
+    text-align: center;
+    padding: 0.6em 0;
+    margin: 0 auto;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.information-grid {
+    background-color: var(--cyan);
+    opacity: 80%;
+    color: #FFF;
+    padding: var(--outer-padding);
+    padding-right: 5em;
+    border-bottom-right-radius: var(--grid-radius);
+}
+
+.attribution-container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.attribution {
+    position: absolute;
+    bottom: 0;
+}
+
+.information-title {
+    margin-bottom: var(--title-bottom);
+}
+
+@media only screen and (max-width: 780px) {
+    body {
+        padding: 4em 0;
+    }
+    .grid {
+        grid-template-rows: auto auto auto;
+        grid-template-columns: 1fr;
+        margin: 0 2em;
+        min-width: 320px;
+    }
+
+    .title-grid {
+        grid-column-start: span 1;
+    }
+
+    .subscription-grid {
+        border-radius: 0;
+    }
+
+    .information-grid {
+        border-bottom-left-radius: var(--grid-radius);
+        border-bottom-right-radius: var(--grid-radius);
+    }
+  }
