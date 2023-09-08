@@ -1,0 +1,142 @@
+:root {
+
+  --pale-blue: hsl(225, 100%, 94%);
+  --bright-blue: hsl(245, 75%, 52%);
+
+  --very-pale-blue: hsl(225, 100%, 98%);
+  --desaturated-blue: hsl(224, 23%, 55%);
+  --dark-blue: hsl(223, 47%, 23%);
+
+  --mobile-width: 375px;
+  --desktop-width: 1440px;
+
+  font-size: 16px;
+  font-family: 'Red Hat Display', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color:  var(--pale-blue);
+  height: 100vh;
+}
+
+@media (width < 600px) {
+  body {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("images/pattern-background-mobile.svg");
+    background-position-y: -100px;
+    background-position-x: -300px;
+  }
+  .change-button {
+    margin-left: 3em;
+  }
+}
+
+@media (width > 600px) {
+  body {
+    background-repeat: no-repeat;
+    background-position: 0 -100px;
+    background-image: url("images/pattern-background-desktop.svg");
+    background-size: cover;
+    background-position-y: -400px;
+    background-position-x: -600px;
+  }
+  .change-button {
+    margin-left: 5em;
+
+  }
+}
+
+
+p {
+  color: var(--desaturated-blue);
+
+}
+
+.main {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  max-width: 430px;
+  min-width: 320px;
+  width: 90%;
+  max-height: 95%;
+  text-align: center;
+  background-color: hsl(225, 100%, 98%);
+  filter: drop-shadow(0 1em 1em var(--desaturated-blue));
+}
+
+.main-header {
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: var(--dark-blue);
+  padding: 0.5em;
+  padding-top: 1em;
+}
+
+.sub-header {
+  width: 80%;
+  margin: auto;
+}
+
+.note-icon {
+  padding: 1em;
+}
+
+.plan-header {
+  font-size: 1rem;
+  font-weight: 900;
+  color: var(--dark-blue);
+}
+
+.plan {
+  margin: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.change-button {
+  font-size: 0.9rem;
+  color: var(--bright-blue);
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+.payment-button {
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  border-radius: 10px;
+  color: var(--very-pale-blue);
+  display: block;
+  width: 80%;
+  margin: auto;
+  padding: 1em 0.9em;
+  background-color: var(--bright-blue);
+  filter: drop-shadow(0 1em 1em var(--pale-blue));
+}
+
+.cancel-button {
+  display: block;
+  margin: 2em auto 3em auto;
+  text-decoration: none;
+  font-weight: 900;
+  font-size: 0.8rem;
+  color: var(--desaturated-blue);
+}
+
+.attribution {
+  position: absolute;
+  bottom: 0;
+}
