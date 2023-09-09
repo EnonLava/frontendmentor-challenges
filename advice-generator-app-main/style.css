@@ -60,7 +60,7 @@ main {
 #advice-button {
     position: absolute;
     background-color: var(--neon-green);
-    display: block;
+    cursor: pointer;
     margin: 0 auto;
     left: 50%;
     bottom: -30px;
