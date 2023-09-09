@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+:root {
+    font-family: 'Manrope', sans-serif;
+    --light-cyan: hsl(193, 38%, 86%);
+    --neon-green: hsl(150, 100%, 66%);
+    --grayish-blue: hsl(217, 19%, 38%);
+    --dark-grayish-blue: hsl(217, 19%, 24%);
+    --dark-blue: hsl(218, 23%, 16%);
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--dark-blue);
+    color: var(--light-cyan);
+}
+
+main {
+    position: relative;
+    text-align: center;
+    background-color: var(--dark-grayish-blue);
+    min-width: 295px;
+    width: 100%;
+    margin: 1em;
+    padding: 3em 1.2em;
+    border-radius: 10px;
+}
+
+.advice-title {
+    color: var(--neon-green);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 2em;
+}
+
+.decoration-line {
+    background-color: var(--dark-grayish-blue);
+    margin: 0 auto;
+    content: url("images/pattern-divider-mobile.svg");
+    width: fit-content;
+    height: fit-content;
+}
+
+.attribution-container {
+    position: absolute;
+    bottom: 0;
+}
+
+#advice {
+    font-size: 1.5rem;
+    margin-bottom: 1em;
+}
+
+#advice-button {
+    position: absolute;
+    background-color: var(--neon-green);
+    display: block;
+    margin: 0 auto;
+    left: 50%;
+    bottom: -30px;
+    margin-left: -30px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#advice-button:hover {
+    filter: drop-shadow(0 0 10px var(--neon-green));
+}
+
+@media only screen and (min-width: 600px) {
+    main {
+        max-width: 500px;
+    }
+    .decoration-line {
+        content: url("images/pattern-divider-desktop.svg");
+    }
+  }
