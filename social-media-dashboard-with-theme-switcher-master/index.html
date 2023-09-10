@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="" href="light.css" id="light">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | [Challenge Name Here]</title>
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <div class="main-container">
+    <header>
+      <section class="header-title-container">
+        <h1 class="header-title">Social Media Dashboard</h1>
+        <p class="header-subtitle">Total Followers: 23,004</p>
+      </section>
+      <div class="flex dark-mode-container">
+        <p class="dark-mode-title">Dark Mode</p>
+        <label class="switch">
+          <input type="checkbox" checked onchange="changeTheme(this)">
+          <span class="slider"></span>
+        </label>
+      </div>
+    </header>
+    <main>
+      <div class="social-media-container flex">
+        <a href="#" class="facebook-container profile-container">
+          <div class="facebook-name-container">
+            <img src="images/icon-facebook.svg" class="social-icon social-media-icon"></img>
+            <p class="social-media-name">@nathanf</p>
+          </div>
+          <h2 class="social-media-number">1987</h2>
+          <p class="social-media-subtitle">Followers</p>
+          <p class="number-rising">12 Today</p>
+        </a>
+        
+        <a href="#" class="twitter-container profile-container">
+          <div class="twitter-name-container">
+            <img src="images/icon-twitter.svg" class="social-icon social-media-icon"></img>
+            <p class="social-media-name">@nathanf</p>
+          </div>
+          <h2 class="social-media-number">1044</h2>
+          <p class="social-media-subtitle">Followers</p>
+          <p class="number-rising">99 Today</p>
+        </a>
+  
+        <div class="top-border">
+          <a href="#" class="instagram-container profile-container">
+            <div class="instagram-name-container">
+              <img src="images/icon-instagram.svg" class="social-icon social-media-icon"></img>
+              <p class="social-media-name">@realnathanf</p>
+            </div>
+            <h2 class="social-media-number">11k</h2>
+            <p class="social-media-subtitle">Followers</p>
+            <p class="number-rising">1099 Today</p>
+          </a>
+        </div>
+  
+  
+        <a href="#" class="youtube-container profile-container">
+          <div class="youtube-name-container">
+            <img src="images/icon-youtube.svg" class="social-icon social-media-icon"></img>
+            <p class="social-media-name">Nathan F.</p>
+          </div>
+          <h2 class="social-media-number">8239</h2>
+          <p class="social-media-subtitle">Subscribers</p>
+          <p class="number-descend">144 Today</p>
+        </a>
+      </div>
+      <h2 class="overview-header">Overview - Today</h2>
+      <div class="overview-container">
+  
+        <a href="#" class="overview">
+          <div class="overview-title-container flex">
+            <p class="overview-title">Page Views</p>
+            <img src="images/icon-facebook.svg" class="social-media-icon">
+          </div>
+          <div class="overview-number-container flex">
+            <h3 class="overview-number">87</h3>
+            <p class="number-rising">3%</p>
+          </div>
+        </a>
+  
+        <a href="#" class="overview">
+          <div class="overview-title-container flex">
+            <p class="overview-title">Likes</p>
+            <img src="images/icon-facebook.svg" class="social-media-icon">
+          </div>
+          <div class="overview-number-container flex">
+            <h3 class="overview-number">52</h3>
+            <p class="number-descend">2%</p>
+          </div>
+        </a>
+  
+        <a href="#" class="overview">
+          <div class="overview-title-container flex">
+            <p class="overview-title">Likes</p>
+            <img src="images/icon-instagram.svg" class="social-media-icon">
+          </div>
+          <div class="overview-number-container flex">
+            <h3 class="overview-number">5462</h3>
+            <p class="number-rising">2257%</p>
+          </div>
+        </a>
+  
+        <a href="#" class="overview">
+          <div class="overview-title-container flex">
+            <p class="overview-title">Profile Views</p>
+            <img src="images/icon-instagram.svg" class="social-media-icon">
+          </div>
+          <div class="overview-number-container flex">
+            <h3 class="overview-number">52k</h3>
+            <p class="number-rising">1375%</p>
+          </div>
+        </a>
+  
+        <a href="#" class="overview">
+          <div class="overview-title-container flex">
+            <p class="overview-title">Retweets</p>
+            <img src="images/icon-twitter.svg" class="social-media-icon">
+          </div>
+          <div class="overview-number-container flex">
+            <h3 class="overview-number">117</h3>
+            <p class="number-rising">303%</p>
+          </div>
+        </a>
+  
+        <a href="#" class="overview">
+          <div class="overview-title-container flex">
+            <p class="overview-title">Likes</p>
+            <img src="images/icon-twitter.svg" class="social-media-icon">
+          </div>
+          <div class="overview-number-container flex">
+            <h3 class="overview-number">507</h3>
+            <p class="number-rising">553%</p>
+          </div>
+        </a>
+  
+        <a href="#" class="overview">
+          <div class="overview-title-container flex">
+            <p class="overview-title">Likes</p>
+            <img src="images/icon-youtube.svg" class="social-media-icon">
+          </div>
+          <div class="overview-number-container flex">
+            <h3 class="overview-number">107</h3>
+            <p class="number-descend">19%</p>
+          </div>
+        </a>
+  
+        <a href="#" class="overview">
+          <div class="overview-title-container flex">
+            <p class="overview-title">Total Views</p>
+            <img src="images/icon-youtube.svg" class="social-media-icon">
+          </div>
+          <div class="overview-number-container flex">
+            <h3 class="overview-number">1407</h3>
+            <p class="number-descend">12%</p>
+          </div>
+        </a>
+  
+      </div>
+    </main>
+  
+
+  </div>
+  <footer class="attribution-container">
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://github.com/Lava519">Lava519</a>.
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

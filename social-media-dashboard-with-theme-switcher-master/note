@@ -1,0 +1,25 @@
+.facebook-container{
+  position:relative;
+  margin-top: -0.5em;
+  color: black;
+  z-index:1;
+  overflow:hidden;
+  text-align:center;
+ 
+}
+
+
+.facebook-container:after{
+   left:20px;
+  margin:0 -100% 0 0;
+  display: inline-block;
+  height: 10px;
+  content: url("images/icon-facebook.svg");
+}
+.facebook-container:before {
+  right:20px;
+  margin:0 0 0 -100%;
+  display: inline-block;
+  height: 10px;
+  content: url("images/icon-facebook.svg");
+}
