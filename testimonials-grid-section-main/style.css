@@ -16,7 +16,7 @@
 }
 
 body {
-    background-color: var(--light-gray);
+    background-color: var(--light-grayish-blue);
     color: var(--white);
     font-weight: 500;
     line-height: 1.5rem;
