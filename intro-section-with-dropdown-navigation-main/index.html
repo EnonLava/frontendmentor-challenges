@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Intro section with dropdown navigation</title>
+
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <div id="overlay" style="display: none;"></div>
+  <div class="mobile-float" style="display: none;">
+    <a class="mobile-dropdown-features" onclick="dropdown(this)" href="#">Features<img src="images/icon-arrow-down.svg" alt=""></a>
+    <ul class="dropdown-menu" style="display: none;">
+      <li><img class="dropdown-icon" src="./images/icon-todo.svg" alt="">Todo List</li>
+      <li><img class="dropdown-icon" src="./images/icon-calendar.svg" alt="">Calendar</li>
+      <li><img class="dropdown-icon" src="./images/icon-reminders.svg" alt="">Reminders</li>
+      <li><img class="dropdown-icon" src="./images/icon-planning.svg" alt="">Planning</li>
+    </ul>
+    <a class="mobile-dropdown-features" onclick="dropdown(this)" href="#">Company<img src="images/icon-arrow-down.svg" alt=""></a>
+      <ul class="dropdown-menu" style="display: none;">
+        <li>History</li>
+        <li>Our Team</li>
+        <li>Blog</li>
+      </ul>
+    <a href="#">Careers</a>
+    <a href="#">About</a>
+    <a class="login-button button" href="#">Login</a>
+    <a class="register-button button" href="#">Register</a>
+  </div>
+  <nav class="nav">
+    <img class="company-logo" src="./images/logo.svg" alt="snap">
+    <div class="mobile-nav" onclick="hamburgerFloat()">
+      <a id="ham-menu" href="#"><img src="./images/icon-menu.svg" alt=""></a>
+    </div>
+    <div class="desktop-nav">
+      <a onclick="dropdown(this)" class="desktop-dropdown-features" href="#">Features<img src="images/icon-arrow-down.svg" alt=""></a>
+        <ul class="dropdown-menu" style="display: none;">
+          <li><img class="dropdown-icon" src="./images/icon-todo.svg" alt="">Todo List</li>
+          <li><img class="dropdown-icon" src="./images/icon-calendar.svg" alt="">Calendar</li>
+          <li><img class="dropdown-icon" style="margin: 0 1.5px 0 1.5px;" src="./images/icon-reminders.svg" alt="">Reminders</li>
+          <li><img class="dropdown-icon" src="./images/icon-planning.svg" alt="">Planning</li>
+        </ul>
+      <a onclick="dropdown(this)" class="desktop-dropdown-features" href="#">Company<img src="images/icon-arrow-down.svg" alt=""></a>
+        <ul class="dropdown-menu" style="display: none;">
+          <li>History</li>
+          <li>Our Team</li>
+          <li>Blog</li>
+        </ul>
+      <a href="#">Careers</a>
+      <a href="#">About</a>
+      <a class="login-button button" href="#">Login</a>
+      <a class="register-button button" href="#">Register</a>
+    </div>
+  </nav>
+  <main class="grid">
+    <div class="image">
+      <img class="desktop-image" class="hero-desktop" src="./images/image-hero-desktop.png" alt="">
+      <img class="mobile-image" class="hero-mobile" src="./images/image-hero-mobile.png" alt="">
+    </div>
+    <div class="content">
+      <h1>Make remote work</h1>
+
+      <p class="main-description">
+        Get your team in sync, no matter your location. Streamline processes, 
+        create team rituals, and watch productivity soar.
+      </p>
+      <a class="learn-button button" href="#">Learn more</a>
+      <div class="client-logo-container">
+        <div><img alt="databiz" src="./images/client-databiz.svg" src="databiz"></div>
+        <div><img alt="audiophile" src="./images/client-audiophile.svg" src="audiophile"></div>
+        <div><img alt="meet" src="./images/client-meet.svg" src="meet"></div>
+        <div><img alt="maker" src="./images/client-maker.svg" src="maker"></div>
+      </div>
+    </div>
+    
+  </main>
+  
+  <footer class="attribution-container">
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://github.com/Lava519">Lava519</a>.
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
