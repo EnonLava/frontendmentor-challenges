@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet"> 
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  
+  <title>Frontend Mentor | FAQ Accordion Card</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+
+  <main class="accordion">
+    <img class="image-shadow-mobile" src="images/bg-pattern-mobile.svg" alt="">
+    <img class="image-mobile" src="images/illustration-woman-online-mobile.svg" alt="">
+    <div class="desktop-overlay">
+      <img class="image-shadow-desktop" src="images/bg-pattern-desktop.svg" alt="">
+      <img class="image-desktop" src="images/illustration-woman-online-desktop.svg" alt="">
+    </div>
+    <img class="image-box" src="images/illustration-box-desktop.svg" alt="">
+      <div class="accordion-accordion">
+      <h1>FAQ</h1>
+      <div class="accordion-box-button" onclick="accordionEvent(0)">
+        <a class="accordion-button" href="#">How many team members can I invite?</a>
+        <img class="accordion-arrow" src="images/icon-arrow-down.svg" alt="">
+      </div>
+      <p class="accordion-text">You can invite up to 2 additional users on the Free plan. There is no limit on 
+      team members for the Premium plan.
+      </p>
+      <hr>
+      <div class="accordion-box-button" onclick="accordionEvent(1)" href="#">
+        <a class="accordion-button" href="#">What is the maximum file upload size?</a>
+        <img class="accordion-arrow" src="images/icon-arrow-down.svg" alt="">
+      </div>
+      <p class="accordion-text">No more than 2GB. All files in your account must fit your allotted storage space.</p>
+      <hr>
+      <div class="accordion-box-button" onclick="accordionEvent(2)">
+        <a class="accordion-button" href="#">How do I reset my password?</a>
+        <img class="accordion-arrow" src="images/icon-arrow-down.svg" alt="">
+      </div>
+      <p class="accordion-text">Click “Forgot password” from the login page or “Change password” from your profile page.
+        A reset link will be emailed to you.</p>
+      <hr>
+      <div class="accordion-box-button" onclick="accordionEvent(3)">
+        <a class="accordion-button" href="#">Can I cancel my subscription?</a>
+        <img class="accordion-arrow" src="images/icon-arrow-down.svg" alt="">
+      </div>
+      <p class="accordion-text">Yes! Send us a message and we’ll process your request no questions asked.</p>
+      <hr>
+      <div class="accordion-box-button" onclick="accordionEvent(4)">
+        <a class="accordion-button" href="#">Do you provide additional support?</a>
+        <img class="accordion-arrow" src="images/icon-arrow-down.svg" alt="">
+      </div>
+      <p class="accordion-text">Chat and email support is available 24/7. Phone lines are open during normal business hours.</p>
+      <hr>
+    </div>
+  </main>
+
+  <footer class="attribution-container">
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://github.com/Lava519">Lava519</a>.
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
