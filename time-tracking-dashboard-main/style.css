@@ -201,6 +201,14 @@ body {
     color: var(--pale-blue);
 }
 
+.attribution-container {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 @media only screen and (min-width: 720px) {
     main {
         display: grid;
