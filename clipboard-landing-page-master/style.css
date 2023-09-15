@@ -22,6 +22,7 @@ body {
     text-align: center;
     padding-top: 10em;
     position: relative;
+    min-width: 300px;
 }
 
 main, header {
