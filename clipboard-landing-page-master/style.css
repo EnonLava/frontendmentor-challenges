@@ -21,6 +21,7 @@ body {
     background-size: contain;
     text-align: center;
     padding-top: 10em;
+    position: relative;
 }
 
 main, header {
@@ -179,6 +180,14 @@ p {
 
 .clipboard-bottom-title {
     margin-bottom: 1em;
+}
+
+.attribution {
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    color: var(--dark-grayish-blue);
 }
 
 #bottom-logo {
