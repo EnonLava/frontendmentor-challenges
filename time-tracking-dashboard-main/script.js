@@ -27,7 +27,6 @@ async function setData(time) {
         default:
             break;
     }
-    console.log(t);
     for (let i = 0; i < el.length; i++) {
         el[i].innerHTML = data[i].timeframes[time].current + "hrs";
         pEl[i].innerHTML = "Last " + t + " - " + data[i].timeframes[time].previous + "hrs";
