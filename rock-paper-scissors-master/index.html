@@ -21,7 +21,7 @@
     <div class="rules-overlay">
       <h2 class="rules-title">Rules</h2>
       <img class="rules-image" src="images/image-rules.svg">
-      <a role="button" id="close-rules"><img src="images/icon-close.svg"></a>
+      <a onClick="toggleRules(false)" role="button" id="close-rules"><img src="images/icon-close.svg"></a>
     </div>
     <header class="header">
       <img class="logo" alt="rock-paper-scissors" src="images/logo.svg" />
@@ -53,7 +53,7 @@
   
     </main>
     <footer>
-      <a role="button" id="rules-button">Rules</a>
+      <a onClick="toggleRules(true)" role="button" id="rules-button">Rules</a>
     </footer>
     
     <!--<div class="attribution">
@@ -61,5 +61,6 @@
       Coded by <a href="#">Your Name Here</a>.
     </div>-->
   </div>
+  <script src="script.js"></script>
 </body>
 </html>

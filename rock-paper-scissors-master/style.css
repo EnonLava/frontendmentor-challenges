@@ -99,6 +99,7 @@ body {
     justify-content: space-between;
     padding: 1em;
     border: 3px solid var(--header-outline);
+    border-radius: 10px;
 }
 
 .score-container {
