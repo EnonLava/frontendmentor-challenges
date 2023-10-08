@@ -88,7 +88,7 @@ body {
     margin: auto auto;
 }
 
-.icon-border:last-child {
+.state-1 > .regular-grid > .rock {
     grid-column-start: span 2;
     margin-top: -38px;
 }
