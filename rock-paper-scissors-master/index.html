@@ -38,22 +38,25 @@
           <div onclick='pick("rock")' class="icon-border rock"><div class="icon-coin"><img class="icon" alt="" src="images/icon-rock.svg" ></div></div>
         </div>
       </div>
-        <div class="state-2">
+        <div class="state-result">
           <div class="picked-flex">
             <div class="player">
               <div class="coin-slot"></div>
-              <p>You Picked</p>
+              <p class="picked-text" >You Picked</p>
             </div>
             <div class="com">
               <div class="coin-slot"></div>
-              <p>The House Picked</p>
+              <p class="picked-text" >The House Picked</p>
             </div>
           </div>
         </div>
 
-  
     </main>
-    <footer>
+    <footer class="footer">
+      <div class="result-container">
+        <h2 id="result"></h2>
+        <a onclick="reset()" role="button" class="reset-button">PLAY AGAIN</a>
+      </div>
       <a onClick="toggleRules(true)" role="button" id="rules-button">Rules</a>
     </footer>
     

@@ -24,8 +24,9 @@
     --radial-gradient: radial-gradient(hsl(214, 47%, 23%) 10%, hsl(237, 49%, 15%));
 }
 
-.state-2 {
+.state-result {
     display: none;
+    width: 375px;
 }
 
 body {
@@ -75,6 +76,7 @@ body {
     height: var(--border);
     border-radius: 50%;
     margin: 0 auto;
+    cursor: pointer;
 }
 
 .regular-grid {
@@ -143,6 +145,48 @@ body {
     text-transform: uppercase;
     font-size: 1.8rem;
     color: var(--dark-text);
+}
+
+.picked-flex {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.picked-text {
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFF;
+    margin-top: 1em;
+}
+
+.result-container {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3em;
+}
+
+.reset-button {
+    background-color: #FFF;
+    font-size: 1.1rem;
+    padding: 0.8em 2.2em;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#result {
+    color: #FFF;
+    font-size: 2.5rem;
+    padding: 0.5em;
 }
 
 #close-rules > img {
