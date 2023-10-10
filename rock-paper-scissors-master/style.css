@@ -79,6 +79,21 @@ body {
     cursor: pointer;
 }
 
+.coin-slot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: var(--border);
+    height: var(--border);
+}
+
+.empty {
+    width: var(--coin);
+    height: var(--coin);
+    background-color: var(--dark-text);
+    border-radius: 50%;
+}
+
 .regular-grid {
     display: grid;
     justify-content: center;

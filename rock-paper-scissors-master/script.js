@@ -1,4 +1,8 @@
+// TEMPORARY THIS CODE NEEDS REFACTORING
+
 const values = [ "rock", "scissors", "paper"];
+const emptyCoin = document.createElement("div");
+emptyCoin.className = "empty";
 let score = document.getElementById("score");
 
 function game(player, com) {
@@ -29,8 +33,10 @@ function reset() {
     let resultState = document.getElementsByClassName("state-result")[0];
     let resultContainer = document.getElementsByClassName("result-container")[0]
     let coins = document.getElementsByClassName("coin-slot");
-    for (let i = 0; i < coins.length; ++i)
+    for (let i = 0; i < coins.length; ++i) {
         coins[i].removeChild(coins[i].firstElementChild);
+        coins[i].appendChild(emptyCoin.cloneNode(true));
+    }
     pickState.style.display = "block";
     resultState.style.display = "none";
     resultContainer.style.display = "none";
@@ -45,12 +51,20 @@ function pick(value) {
     let coinSlot = document.getElementsByClassName("coin-slot");
     let comValue = values[Math.floor(Math.random() * 3)];
     let com = document.getElementsByClassName(comValue)[0];
-    coinSlot[0].appendChild(coin.cloneNode(true));
-    coinSlot[1].appendChild(com.cloneNode(true));
-    coinSlot[0].children[0].onclick = null;
-    coinSlot[1].children[0].onclick = null;
-    game(value, comValue);
-
+    setTimeout(() => {
+        console.log(coinSlot[0].firstElementChild);
+        coinSlot[0].removeChild(coinSlot[0].firstElementChild);
+        coinSlot[0].appendChild(coin.cloneNode(true));
+        coinSlot[0].children[0].onclick = null;
+        setTimeout(() => {
+            coinSlot[1].removeChild(coinSlot[1].firstElementChild);
+            coinSlot[1].appendChild(com.cloneNode(true));
+            coinSlot[1].children[0].onclick = null;
+            setTimeout(() => {
+                game(value, comValue);
+            }, 250);
+        }, 500);
+    }, 500);
 }
 
 function toggleRules(shown) {
