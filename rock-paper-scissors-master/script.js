@@ -6,6 +6,7 @@ emptyCoin.className = "empty";
 let score = document.getElementById("score");
 
 function game(player, com) {
+    let winner = 2;
     let result = document.getElementById("result");
     let resultContainer = document.getElementsByClassName("result-container")[0]
     if (player == com)
@@ -18,14 +19,17 @@ function game(player, com) {
         result.innerText = "YOU WIN";
     else {
         result.innerText = "YOU LOSE";
+        winner = 1;
         if (score.innerText > 0)
             score.innerText--;
     }
-
-    if (result.innerText == "YOU WIN")
+    if (result.innerHTML == "YOU WIN") {
         score.innerText++;
+        winner = 0;
+    }
         
-    resultContainer.style.display = "flex";
+    resultContainer.style.visibility = "visible";
+    return winner;
 }
 
 function reset() {
@@ -39,7 +43,7 @@ function reset() {
     }
     pickState.style.display = "block";
     resultState.style.display = "none";
-    resultContainer.style.display = "none";
+    resultContainer.style.visibility = "hidden";
 }
 
 function pick(value) {
@@ -52,7 +56,6 @@ function pick(value) {
     let comValue = values[Math.floor(Math.random() * 3)];
     let com = document.getElementsByClassName(comValue)[0];
     setTimeout(() => {
-        console.log(coinSlot[0].firstElementChild);
         coinSlot[0].removeChild(coinSlot[0].firstElementChild);
         coinSlot[0].appendChild(coin.cloneNode(true));
         coinSlot[0].children[0].onclick = null;
@@ -61,8 +64,10 @@ function pick(value) {
             coinSlot[1].appendChild(com.cloneNode(true));
             coinSlot[1].children[0].onclick = null;
             setTimeout(() => {
-                game(value, comValue);
-            }, 250);
+                let winner = game(value, comValue);
+                if (winner < 2)
+                    coinSlot[winner].firstElementChild.classList.add(...["outer-gradient"])
+            }, 500);
         }, 500);
     }, 500);
 }
