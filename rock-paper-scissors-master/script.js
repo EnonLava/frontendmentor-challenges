@@ -1,5 +1,3 @@
-// TEMPORARY THIS CODE NEEDS REFACTORING
-
 const values = [ "rock", "scissors", "paper"];
 const emptyCoin = document.createElement("div");
 emptyCoin.className = "empty";
@@ -20,6 +18,8 @@ function game(player, com) {
     else {
         result.innerText = "YOU LOSE";
         winner = 1;
+        let resetButton = document.getElementsByClassName("reset-button")[0];
+        resetButton.style.color = "#A00"
         if (score.innerText > 0)
             score.innerText--;
     }
@@ -37,6 +37,8 @@ function reset() {
     let resultState = document.getElementsByClassName("state-result")[0];
     let resultContainer = document.getElementsByClassName("result-container")[0]
     let coins = document.getElementsByClassName("coin-slot");
+    let resetButton = document.getElementsByClassName("reset-button")[0];
+    resetButton.style.color = "var(--dark-text)"
     for (let i = 0; i < coins.length; ++i) {
         coins[i].removeChild(coins[i].firstElementChild);
         coins[i].appendChild(emptyCoin.cloneNode(true));
