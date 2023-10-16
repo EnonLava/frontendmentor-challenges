@@ -399,5 +399,13 @@ body {
         margin-left: auto;
         margin-right: 2em;
     }
+
+    #close-rules {
+        margin-bottom: 0;
+        position: absolute;
+        top: 2em;
+        right: 2em;
+    }
+    
   }
   
