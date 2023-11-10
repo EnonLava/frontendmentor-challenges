@@ -2,24 +2,34 @@
     margin: 0;
     padding: 0;
 }
-body {
+.body {
     position: relative;
     height: 100vh;
+    max-width: 100vw;
+    overflow: hidden;
 }
 
-main {
+.main {
     height: 100%;
 }
 
 .frame-website {
     display: block;
+    position: absolute;
     height: 100%;
+    width: 100%;
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
+    animation-direction: alternate;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
 .header {
     position: fixed;
+    z-index: 1;
 }
 
 #previous,#next {
@@ -32,7 +42,8 @@ main {
     width: 50px;
     height: 50px;
     margin: auto 0;
-    z-index: 10;
+    z-index: 1;
+    cursor: pointer;
 }
 
 #previous {
@@ -44,22 +55,84 @@ main {
 }
 
 
-@keyframes scale-down {
+@keyframes next-off {
     0% {
         scale: 1;
+        left: 100%;
     }    
 
-    100% {
+    30% {
         scale: 0.7;
+        left: 100%;
+    }
+
+    70% {
+        left: 0;
+    }
+
+    100% {
+        scale: 1;
+        left: 0;
     }
 }
 
-@keyframes scale-up {
+@keyframes next-on {
     0% {
-        scale: 0.7;
+        scale: 1;
     }    
+
+    30% {
+        scale: 0.7;
+        left: 0;
+    }
+
+    70% {
+        left: -100%;
+    }
 
     100% {
         scale: 1;
+        left: -100%;
+    }
+}
+
+@keyframes previous-on {
+    0% {
+        scale: 1;
+    }    
+
+    30% {
+        scale: 0.7;
+        left: 0;
+    }
+
+    70% {
+        left: 100%;
+    }
+
+    100% {
+        scale: 1;
+        left: 100%;
+    }
+}
+
+@keyframes previous-off {
+    0% {
+        scale: 1;
+        left: -100%;
+    }    
+
+    30% {
+        scale: 0.7;
+        left: -100%;
+    }
+
+    70% {
+        left: 0;
+    }
+
+    100% {
+        scale: 1;
+        left: 0;
     }
 }
