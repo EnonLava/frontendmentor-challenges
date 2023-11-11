@@ -14,6 +14,8 @@ const pages = [ "https://lava519.github.io/frontendmentor-challenges/3-column-pr
     "https://lava519.github.io/frontendmentor-challenges/time-tracking-dashboard-main"
 ] //temporary
 
+let iframeEl = [];
+
 document.getElementById("previous").addEventListener("click", ()=>{changePage("previous")})
 document.getElementById("next").addEventListener("click", ()=>{changePage("next")})
 let offScreen;
@@ -24,47 +26,25 @@ onStart();
 
 
 function onStart() {
-    offScreen = document.getElementsByClassName("frame-website")[0];
-    offScreen.classList.toggle("offscreen");
-    onScreen = document.getElementsByClassName("frame-website")[1];
+    for(i = 0; i < pages.length; i++){
+        iframeEl.push(document.createElement("iframe"));
+        iframeEl[i].width = "100%";
+        iframeEl[i].height = "100%";
+        iframeEl[i].src = pages[i];
+        iframeEl[i].frameBorder = "0";
+        iframeEl[i].style.display = "none";
+        iframeEl[i].classList = "frame-website offscreen"; 
+    }
+    onScreen = document.getElementsByClassName("frame-website")[0];
     onScreen.src = pages[index];
-    offScreen.src = pages[index+1];
-    offScreen.style.display = "none";
     console.log(onScreen);
     console.log(pages.length)
 }
 
-function onNext() {
-    incIndex(true);
-    offScreen.src = pages[index];
-    document.getElementById("next").style.pointerEvents = "none";
-    offScreen.style.display = "block";
-    onScreen.style.animationName = "next-on";
-    offScreen.style.animationName = "next-off";
-
-    setTimeout(() => {
-        toggleFrame();
-        document.getElementById("next").style.pointerEvents = "auto";
-    }, 500);
-}
-
-function onPrevious() {
-    incIndex(false);
-    offScreen.src = pages[index];
-    document.getElementById("previous").style.pointerEvents = "none";
-    offScreen.style.display = "block";
-    onScreen.style.animationName = "previous-on";
-    offScreen.style.animationName = "previous-off";
-
-    setTimeout(() => {
-        toggleFrame();
-        document.getElementById("previous").style.pointerEvents = "auto";
-    }, 500);
-}
 
 function changePage(direction) {
     incIndex(direction);
-    offScreen.src = pages[index];
+    offScreen = document.body.appendChild(iframeEl[index]);
     document.getElementById(direction).style.pointerEvents = "none";
     offScreen.style.display = "block";
     onScreen.style.animationName = direction+"-on";
@@ -99,4 +79,5 @@ function toggleFrame() {
         else
             onScreen = frames[i]
     }
+    document.querySelector(".offscreen").remove();
 }
