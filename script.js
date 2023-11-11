@@ -14,16 +14,14 @@ const pages = [ "https://lava519.github.io/frontendmentor-challenges/3-column-pr
     "https://lava519.github.io/frontendmentor-challenges/time-tracking-dashboard-main"
 ] //temporary
 
-let iframeEl = [];
-
 document.getElementById("previous").addEventListener("click", ()=>{changePage("previous")})
 document.getElementById("next").addEventListener("click", ()=>{changePage("next")})
 let offScreen;
 let onScreen;
 let index = 0;
+let iframeEl = [];
 
 onStart();
-
 
 function onStart() {
     for(i = 0; i < pages.length; i++){
