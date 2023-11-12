@@ -173,7 +173,7 @@ input:checked + .slider {
 }
 
 .number-rising::before {
-    content: url("/images/icon-up.svg");
+    content: url("./images/icon-up.svg");
     position: relative;
     margin-right: 3px;
     bottom: 3px;
@@ -186,7 +186,7 @@ input:checked + .slider {
 }
 
 .number-descend::before {
-    content: url("/images/icon-down.svg");
+    content: url("./images/icon-down.svg");
     position: relative;
     bottom: 3px;
     margin-right: 3px;
