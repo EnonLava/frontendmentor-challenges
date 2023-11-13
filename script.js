@@ -1,27 +1,13 @@
-const pages = [ "https://lava519.github.io/frontendmentor-challenges/3-column-preview-card-component-main/",
-    "https://lava519.github.io/frontendmentor-challenges/advice-generator-app-main/",
-    "https://lava519.github.io/frontendmentor-challenges/clipboard-landing-page-master/",
-    "https://lava519.github.io/frontendmentor-challenges/faq-accordion-card-main/",
-    "https://lava519.github.io/frontendmentor-challenges/intro-section-with-dropdown-navigation-main/",
-    "https://lava519.github.io/frontendmentor-challenges/order-summary-component-main/",
-    "https://lava519.github.io/frontendmentor-challenges/profile-card-component-main/",
-    "https://lava519.github.io/frontendmentor-challenges/rock-paper-scissors-master/",
-    "https://lava519.github.io/frontendmentor-challenges/single-price-grid-component-master",
-    "https://lava519.github.io/frontendmentor-challenges/social-media-dashboard-with-theme-switcher-master",
-    "https://lava519.github.io/frontendmentor-challenges/social-proof-section-master/",
-    "https://lava519.github.io/frontendmentor-challenges/stats-preview-card-component-main/",
-    "https://lava519.github.io/frontendmentor-challenges/testimonials-grid-section-main",
-    "https://lava519.github.io/frontendmentor-challenges/time-tracking-dashboard-main"
-] //temporary
+const pages = []
+let iframeEl = [];
 
 document.getElementById("previous").addEventListener("click", ()=>{changePage("previous")})
 document.getElementById("next").addEventListener("click", ()=>{changePage("next")})
 let offScreen;
 let onScreen;
 let index = 0;
-let iframeEl = [];
 
-onStart();
+getPages();
 
 function onStart() {
     for(i = 0; i < pages.length; i++){
@@ -35,8 +21,6 @@ function onStart() {
     }
     onScreen = document.getElementsByClassName("frame-website")[0];
     onScreen.src = pages[index];
-    console.log(onScreen);
-    console.log(pages.length)
 }
 
 
@@ -65,7 +49,6 @@ function incIndex(value) {
             index = pages.length-1;
         else
             index--;
-    console.log(index)
 }       
 
 function toggleFrame() {
@@ -78,4 +61,17 @@ function toggleFrame() {
             onScreen = frames[i]
     }
     document.querySelector(".offscreen").remove();
+}
+
+async function getPages() {
+    const git = "https://api.github.com/repos/Lava519/frontendmentor-challenges/git/trees/master"
+    const base = "https://lava519.github.io/frontendmentor-challenges/";
+    const dataJSON = await fetch(git);
+    const data = await dataJSON.json();
+
+    for(let i = 0; i < data.tree.length; i++) {
+        if ( data.tree[i].path.includes("-main") || data.tree[i].path.includes("-master") )
+            pages.push(base + data.tree[i].path)
+    }
+    onStart();
 }

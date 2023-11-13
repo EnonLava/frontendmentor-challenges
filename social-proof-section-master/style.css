@@ -1,13 +1,3 @@
-/*
-font-family: 'Big Shoulders Display', cursive;
-font-family: 'Inter', sans-serif;
-font-family: 'Lexend Deca', sans-serif;
-font-family: 'Spartan', sans-serif;
-
-
-
-*/
-
 * {
     margin: 0;
     padding: 0;
@@ -28,13 +18,13 @@ body {
     background-color: var(--white);
 }
 
-.main-section h1 {
+.main-section > h1 {
     font-size: 2.1rem;
     color: var(--very-dark-magenta);
     text-align: center;
 }
 
-.main-section p {
+.main-section > p {
     text-align: center;
     line-height: 1.6rem;
     color: var(--dark-grayish-magenta);
@@ -76,12 +66,12 @@ body {
     padding: 1.5em 2em;
 }
 
-.comment-review p {
+.comment-review > p {
     font-family: 'Inter', sans-serif;
     line-height: 1.6rem;
 }
 
-.comment-review img {
+.flex > img {
     border-radius: 50%;
     
 }
@@ -92,7 +82,7 @@ body {
     align-items: center;
 }
 
-.flex img {
+.flex > img {
     transform: scale(.55);
     transform-origin: left;
     margin-right: -2em;
@@ -102,12 +92,12 @@ body {
     margin: 1em;
 }
 
-.flex div h2 {
+.flex > div > h2 {
     font-size: 1rem;
     padding: 0.2em 0;
 }
 
-.flex div h3 {
+.flex > div > h3 {
     padding: 0.2em 0;
     font-size: 1rem;
     font-weight: 400;
@@ -121,11 +111,11 @@ body {
     .main-section{
         padding-right: 15em;
     } 
-    .main-section h1 {
+    .main-section > h1 {
         text-align: left;
         font-size: 3rem;
     }
-    .main-section p {
+    .main-section > p {
         text-align: left;
         margin-bottom: 0;
     }
@@ -149,7 +139,7 @@ body {
     }
 }
 
-@media (min-width: 1400px) {
+@media (min-width: 1550px) {
     body {
         padding: 8em 12em;
     }
@@ -168,11 +158,11 @@ body {
         width: 80%;
         justify-content: left;
     }
-    .star-review .stars {
+    .star-review > .stars {
         margin: 1em 2em;
         margin-right: 3em;
     }
-    .stars img {
+    .stars > img {
         margin: 0 0.3em
     }
     .comment-review {
