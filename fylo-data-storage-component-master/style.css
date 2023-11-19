@@ -11,7 +11,7 @@ body {
   position: relative;
   background-color: hsl(229, 57%, 11%);
   color: hsl(243, 100%, 93%);
-  background-image: url("/images/bg-mobile.png");
+  background-image: url("images/bg-mobile.png");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -148,6 +148,9 @@ main {
 
 .attribution-container {
   position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
 }
 
 #document {
@@ -164,7 +167,7 @@ main {
 
 @media (min-width: 700px) {
   body {
-    background-image: url("/images/bg-desktop.png");
+    background-image: url("images/bg-desktop.png");
     background-size: contain;
     background-position-y: bottom;
     background-position-x: right;
