@@ -8,6 +8,10 @@
   padding: 0;
 }
 
+body {
+  position: relative;
+}
+
 header .desktop-nav {
   display: none;
 }
@@ -15,12 +19,24 @@ header .mobile-nav {
   display: flex;
   align-items: center;
   height: 60px;
+  gap: 1em;
+  padding: 0 1em;
+  position: fixed;
+  background-color: hsl(0, 0%, 100%);
+  top: 0;
+  left: 0;
+  right: 0;
 }
 header .mobile-nav .avatar {
   height: 50%;
+  cursor: pointer;
+}
+header .mobile-nav #float-button {
+  cursor: pointer;
 }
 header .mobile-nav #mobile-cart-button {
   margin-left: auto;
+  cursor: pointer;
 }
 
 .content-container .desktop-image-container {
