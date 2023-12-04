@@ -1,0 +1,30 @@
+:root {
+  font-size: 16px;
+  background-color: hsl(0, 0%, 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header .desktop-nav {
+  display: none;
+}
+header .mobile-nav {
+  display: flex;
+  align-items: center;
+  height: 60px;
+}
+header .mobile-nav .avatar {
+  height: 50%;
+}
+header .mobile-nav #mobile-cart-button {
+  margin-left: auto;
+}
+
+.content-container .desktop-image-container {
+  display: none;
+}
+
+/*# sourceMappingURL=style.css.map */
