@@ -67,7 +67,8 @@ header .mobile-nav #mobile-cart-button {
 }
 
 #mobile-float-menu #float-close {
-  margin-top: 1em;
+  cursor: pointer;
+  margin-top: 22px;
   margin-left: 1em;
   margin-bottom: 1em;
 }

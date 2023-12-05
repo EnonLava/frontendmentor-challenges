@@ -84,7 +84,8 @@ header {
 }
 #mobile-float-menu {
     #float-close {
-        margin-top: $mobile-gap;
+        cursor: pointer;
+        margin-top: 22px;
         margin-left: $mobile-gap;
         margin-bottom: $mobile-gap;
     }

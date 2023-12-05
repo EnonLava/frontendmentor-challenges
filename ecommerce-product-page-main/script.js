@@ -9,6 +9,12 @@ document.getElementById("previous").addEventListener("click", ()=>{previousImage
 const images = 4;
 let imgIndex = 1;
 
+const overlay = document.getElementById("overlay");
+const floatMenu = document.getElementById("mobile-float-menu")
+document.getElementById("float-button").addEventListener("click", ()=>{toggleFloat()});
+document.getElementById("float-close").addEventListener("click", ()=>{toggleFloat()});
+
+
 function nextImage() {
     let url = mobileImage.src;
     ++imgIndex;
@@ -34,4 +40,15 @@ function cartValue(increase) {
             cartDisplay--;
     }
     cartDisplayValue.innerText = cartDisplay;
+}
+
+function toggleFloat() {
+    if (overlay.style.display == "block") {
+        floatMenu.style.display = "none";
+        overlay.style.display = "none";
+    }else {
+        floatMenu.style.display = "block";
+        overlay.style.display = "block";
+    }
+    console.log(overlay.style.display);
 }
