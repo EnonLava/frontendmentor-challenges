@@ -9,6 +9,7 @@ $white: hsl(0, 0%, 100%);
 $black-transparent: hsla(0, 0%, 0%, 0.75);
 
 $mobile-gap: 1em;
+$desktop-gap: 1em;
 $button-border-radius: 7px;
 $button-height: 45px;
 
@@ -230,6 +231,121 @@ header {
         }
     }
 }
+
+@media screen and (min-width: 1000px) {
+    body {
+      height: 100vh;
+      min-height: 500px;
+    }
+    header {
+        #desktop-cart-button {
+            margin-left: auto;
+        }
+        .mobile-nav {
+            display: none;
+        }
+        .desktop-nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: $desktop-gap;
+            width: 70%;
+            height: 100px;
+            margin: 0 auto;
+            border-bottom: 1px solid $black-transparent;
+        }
+
+        .desktop-nav {
+            .nav-buttons {
+                display: flex;
+                justify-content: space-evenly;
+                gap: $desktop-gap;
+                list-style-type: none;
+                height: 100%;
+            }
+            .nav-button {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+            }
+            .nav-button:hover {
+                border-bottom: 2px solid $orange;
+            }
+            .avatar {
+                height: 60%;
+            }
+        }
+
+    }
+    main {
+        display: flex;
+        gap: 4em;
+        justify-content: center;
+        align-items: center;
+        width: 60%;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    main {
+        .content-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .mobile-image-container {
+            display: none;
+        }
+        .desktop-image-container {
+            display: block;
+            flex-basis: 1fr;
+        }
+        #menu-desktop-image-container {
+            display: none;
+        }
+        .main-image {
+            margin-bottom: 1em;
+        }
+        .main-image {
+            border-radius: 0.5em;
+            width: 100%;
+        }
+        .thumbnails-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 1em;
+            align-items: center;
+        }
+        .thumbnail {
+            border-radius: 0.5em;
+            width: 100%;
+        }
+        .text-container {
+            flex-basis: 1fr;
+        }
+        .text-container {
+            .company-name {
+                font-size: 1rem;
+            }
+            .price-container {
+                display: block;
+            }
+            .cart-buttons {
+                display: flex;
+            }
+            .cart-buttons {
+                #add-to-cart {
+                    width: 60%;
+                    margin-left: 0.5em;
+                    margin-top: auto;
+                }
+                #increase,#decrease,#cart-value {
+                    width: 16%;
+                }
+            }
+        }
+    }
+  }
 
 footer {
     position: fixed;

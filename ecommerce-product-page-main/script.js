@@ -14,6 +14,13 @@ const floatMenu = document.getElementById("mobile-float-menu")
 document.getElementById("float-button").addEventListener("click", ()=>{toggleFloat()});
 document.getElementById("float-close").addEventListener("click", ()=>{toggleFloat()});
 
+const desktopMenu = document.getElementById("menu-desktop-image-container");
+document.getElementsByClassName("main-image")[0].addEventListener("click", ()=>{toggleMenu()});
+document.getElementById("menu-exit").addEventListener("click", ()=>{toggleMenu()});
+
+let isMobile = true;
+
+window.addEventListener('resize', ()=>{resizeCheck()}, true);
 
 function nextImage() {
     let url = mobileImage.src;
@@ -50,5 +57,21 @@ function toggleFloat() {
         floatMenu.style.display = "block";
         overlay.style.display = "block";
     }
-    console.log(overlay.style.display);
+}
+
+function resizeCheck() {
+    if (overlay.style.display == "block") {
+        if (window.screen.width > 1000) {
+            floatMenu.style.display = "none";
+            desktopMenu.style.display = "block";
+        }else {
+            floatMenu.style.display = "block";
+            desktopMenu.style.display = "none";
+        }
+    }
+
+}
+
+function toggleMenu() {
+    console.log("YO");
 }
