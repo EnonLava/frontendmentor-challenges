@@ -2,6 +2,7 @@ const cartDisplayValue = document.getElementById("cart-value")
 document.getElementById("increase").addEventListener("click", ()=>{cartValue(true)});
 document.getElementById("decrease").addEventListener("click", ()=>{cartValue(false)});
 let cartDisplay = 0;
+let cartItems = 0;
 
 const mobileImage = document.getElementById("mobile-image");
 const mainImages = document.getElementsByClassName("main-image");
@@ -22,7 +23,16 @@ const desktopMenu = document.getElementById("menu-desktop-image-container");
 document.getElementsByClassName("main-image")[0].addEventListener("click", ()=>{toggleMenu()});
 document.getElementById("menu-exit").addEventListener("click", ()=>{toggleMenu()});
 
+const cartMenu = document.getElementById("cart-window");
+cartMenu.addEventListener("mouseleave", ()=>{toggleCartMenu()})
+document.getElementById("desktop-cart-button").addEventListener("click", ()=>{toggleCartMenu()});
+document.getElementById("mobile-cart-button").addEventListener("click", ()=>{toggleCartMenu()});
+let emptyCart = document.getElementById("cart-empty");
 let isMobile = true;
+
+
+document.getElementById("add-to-cart").addEventListener("click", ()=>{addToCart()});
+document.getElementById("delete").addEventListener("click", ()=>{deleteItems()});
 
 for(let i = 0; i < thumbnails.length; i++) {
     thumbnails[i].addEventListener('click', ()=>{setActive((i%4)+1)});
@@ -30,11 +40,13 @@ for(let i = 0; i < thumbnails.length; i++) {
 
 window.addEventListener('resize', ()=>{resizeCheck()}, true);
 
+setActive(1);
+
 function nextImage() {
     ++imgIndex;
     if (imgIndex > images)
         imgIndex = 1;
-    changeImage(imgIndex);
+    setActive(imgIndex);
 }
 
 function previousImage() {
@@ -42,7 +54,7 @@ function previousImage() {
     --imgIndex;
     if (imgIndex < 1)
         imgIndex = images;
-    changeImage(imgIndex);
+    setActive(imgIndex);
 }
 
 function cartValue(increase) {
@@ -66,6 +78,14 @@ function toggleFloat() {
     }
 }
 
+function toggleCartMenu() {
+    if( cartMenu.style.display == "block" ) {
+        cartMenu.style.display = "none";
+    } else {
+        cartMenu.style.display = "block";
+    }
+}
+
 function resizeCheck() {
     if (overlay.style.display == "block") {
         if (window.screen.width > 1000 && floatMenu.style.display == "block") {
@@ -79,6 +99,9 @@ function resizeCheck() {
 }
 
 function toggleMenu() {
+    if(cartItems <= 0) {
+
+    }
     if (overlay.style.display == "block") {
         desktopMenu.style.display = "none";
         overlay.style.display = "none";
@@ -102,4 +125,37 @@ function changeImage(index) {
     mobileImage.src = url.slice(0,-5) + index + url.slice(-4);
     for(let i = 0; i < mainImages.length; i++)
         mainImages[i].src = url.slice(0,-5) + index + url.slice(-4);
+}
+
+function addToCart() {
+    if( cartItems <= 0 && cartDisplay > 0 ) {
+        document.getElementById("cart-empty").style.display = "none";
+        document.getElementById("cart-full").style.visibility = "visible";
+        for(let i = 0; i < document.getElementsByClassName("num").length; i++) {
+            document.getElementsByClassName("num")[i].style.display = "inline"
+        }
+    }
+    if ( cartDisplay > 0) {
+        cartItems+=cartDisplay;
+        cartDisplay = 0;
+        cartValue(false);
+        updateCart()
+    }
+}
+
+function updateCart() {
+    for(let i = 0; i < document.getElementsByClassName("num").length; i++) {
+        document.getElementsByClassName("num")[i].innerText = cartItems;
+    }
+    document.getElementById("cart-product-quantity").innerText = cartItems;
+    document.getElementById("cart-product-total").innerText = "$" + cartItems * 125;
+}
+
+function deleteItems() {
+    cartItems = 0;
+    document.getElementById("cart-empty").style.display = "block";
+    document.getElementById("cart-full").style.visibility = "hidden";
+    for(let i = 0; i < document.getElementsByClassName("num").length; i++) {
+        document.getElementsByClassName("num")[i].style.display = "none"
+    }
 }

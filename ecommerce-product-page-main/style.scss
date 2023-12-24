@@ -7,6 +7,7 @@ $grayish-blue: hsl(220, 14%, 75%);
 $light-grayish-blue: hsl(223, 64%, 98%);
 $white: hsl(0, 0%, 100%);
 $black-transparent: hsla(0, 0%, 0%, 0.75);
+$dark-grayish-blue-transparent: hsla(219, 9%, 45%, 0.3);
 
 $mobile-gap: 1em;
 $desktop-gap: 1em;
@@ -24,7 +25,7 @@ $button-height: 45px;
 }
 
 #overlay {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     bottom: 0;
@@ -39,12 +40,35 @@ body {
 }
 .active {
     border: $orange 3px solid;
-    position: relative
+    position: relative;
+    background-color: #FFF;
 }
 .active > .thumbnail {
     filter: opacity(0.5);
 }
 header {
+    position: relative;
+}
+
+header {
+    .cart-button-container {
+        margin-left: auto;
+        position: relative;
+        cursor: pointer;
+    }
+    .cart-button-container > span {
+        display: none;
+        border-radius: 30%;
+        font-size: 0.65rem;
+        font-weight: 700;
+        padding: 0.1em 0.5em;
+        background-color: $orange;
+        color: #FFF;
+        position: absolute;
+        top: -0.5em;
+        right: -0.5em;
+        pointer-events: none;
+    }
     .desktop-nav {
         display: none;
     }
@@ -71,10 +95,71 @@ header {
         #float-button {
             cursor: pointer;
         }
+    }
+    #cart-window {
+        position: absolute;
+        top: calc(100% + 5px);
+        width: 90%;
+        right: 0;
+        left: 0;
+        margin: 0 auto;
+        z-index: 2;
+        background-color: #FFF;
+        filter: drop-shadow(0em 1.5em 1.5em $dark-grayish-blue-transparent);
+        border-radius: 10px;
+        display: none;
+    }
+    #cart-window {
+        .cart-title {
+            font-weight: 700;
+            padding: 1em;
+            border-bottom: 1px solid $dark-grayish-blue-transparent;
+        }
+        .cart-product-title-container {
+            padding: 1em;
+            gap: $mobile-gap;
+            display: flex;
+            flex-direction: row;
+            height: 50px;
+            justify-content: space-between;
+            align-items: center;
 
-        #mobile-cart-button {
-            margin-left: auto;
-            cursor: pointer
+        }
+        .cart-product-image {
+            height: 100%;
+            border-radius: 5px;
+        }
+        #cart-full {
+            display: flex;
+            flex-direction: column;
+        }
+        #cart-empty {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 1em;
+            padding-top: 2em;
+            margin: auto auto;
+            text-align: center;
+        }
+        .checkout-button {
+            margin-top: 0.5rem;
+            padding: 0.8em 0;
+            background-color: $orange;
+            border-radius: $button-border-radius;
+            border: none;
+            font-weight: 700;
+            font-size: 1rem;
+            color: $white;
+            margin: 0 1em;
+            margin-bottom: 1em;
+            cursor: pointer;
+        }
+        #delete {
+            cursor: pointer;
         }
     }
 }
@@ -245,9 +330,6 @@ header {
       min-height: 500px;
     }
     header {
-        #desktop-cart-button {
-            margin-left: auto;
-        }
         .mobile-nav {
             display: none;
         }
@@ -260,6 +342,12 @@ header {
             height: 100px;
             margin: 0 auto;
             border-bottom: 1px solid $black-transparent;
+        }
+
+        #cart-window {
+            right: 15%;
+            left: auto;
+            max-width: 350px;
         }
 
         .desktop-nav {
@@ -326,6 +414,9 @@ header {
             .menu-thumbnails-container {
                 width: 90%;
             }
+            .menu-image-container {
+                position: relative;
+            }
             #menu-exit {
                 margin-left: auto;
                 margin-bottom: 1em;
@@ -335,7 +426,6 @@ header {
             #menu-previous, #menu-next {
                 position: absolute;
                 margin: auto 0;
-                margin-bottom: 100%;
                 top: 0;
                 bottom: 0;
                 width: 10px;
@@ -374,6 +464,9 @@ header {
             height: 100%;
         }
         .thumbnail-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             border-radius: 0.5em;
             overflow: hidden;
         }
@@ -402,6 +495,13 @@ header {
             }
         }
     }
+    @media screen and (max-height: 650px) {
+        #menu-desktop-image-container {
+            position: fixed;
+            top: 0;
+            bottom: -100%;
+        }
+    }
   }
 
 footer {
@@ -416,5 +516,6 @@ footer {
     main {
         height: auto;
         padding-top: 2em;
+        max-width: 1440px;
     }
 }

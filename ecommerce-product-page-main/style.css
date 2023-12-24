@@ -10,7 +10,7 @@
 }
 
 #overlay {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
@@ -27,12 +27,35 @@ body {
 .active {
   border: hsl(26, 100%, 55%) 3px solid;
   position: relative;
+  background-color: #FFF;
 }
 
 .active > .thumbnail {
   filter: opacity(0.5);
 }
 
+header {
+  position: relative;
+}
+
+header .cart-button-container {
+  margin-left: auto;
+  position: relative;
+  cursor: pointer;
+}
+header .cart-button-container > span {
+  display: none;
+  border-radius: 30%;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 0.1em 0.5em;
+  background-color: hsl(26, 100%, 55%);
+  color: #FFF;
+  position: absolute;
+  top: -0.5em;
+  right: -0.5em;
+  pointer-events: none;
+}
 header .desktop-nav {
   display: none;
 }
@@ -57,8 +80,67 @@ header .mobile-nav .avatar {
 header .mobile-nav #float-button {
   cursor: pointer;
 }
-header .mobile-nav #mobile-cart-button {
-  margin-left: auto;
+header #cart-window {
+  position: absolute;
+  top: calc(100% + 5px);
+  width: 90%;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  z-index: 2;
+  background-color: #FFF;
+  filter: drop-shadow(0em 1.5em 1.5em hsla(219, 9%, 45%, 0.3));
+  border-radius: 10px;
+  display: none;
+}
+header #cart-window .cart-title {
+  font-weight: 700;
+  padding: 1em;
+  border-bottom: 1px solid hsla(219, 9%, 45%, 0.3);
+}
+header #cart-window .cart-product-title-container {
+  padding: 1em;
+  gap: 1em;
+  display: flex;
+  flex-direction: row;
+  height: 50px;
+  justify-content: space-between;
+  align-items: center;
+}
+header #cart-window .cart-product-image {
+  height: 100%;
+  border-radius: 5px;
+}
+header #cart-window #cart-full {
+  display: flex;
+  flex-direction: column;
+}
+header #cart-window #cart-empty {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 1em;
+  padding-top: 2em;
+  margin: auto auto;
+  text-align: center;
+}
+header #cart-window .checkout-button {
+  margin-top: 0.5rem;
+  padding: 0.8em 0;
+  background-color: hsl(26, 100%, 55%);
+  border-radius: 7px;
+  border: none;
+  font-weight: 700;
+  font-size: 1rem;
+  color: hsl(0, 0%, 100%);
+  margin: 0 1em;
+  margin-bottom: 1em;
+  cursor: pointer;
+}
+header #cart-window #delete {
   cursor: pointer;
 }
 
@@ -220,9 +302,6 @@ header .mobile-nav #mobile-cart-button {
     height: 100vh;
     min-height: 500px;
   }
-  header #desktop-cart-button {
-    margin-left: auto;
-  }
   header .mobile-nav {
     display: none;
   }
@@ -235,6 +314,11 @@ header .mobile-nav #mobile-cart-button {
     height: 100px;
     margin: 0 auto;
     border-bottom: 1px solid hsla(0, 0%, 0%, 0.75);
+  }
+  header #cart-window {
+    right: 15%;
+    left: auto;
+    max-width: 350px;
   }
   header .desktop-nav .nav-buttons {
     display: flex;
@@ -294,6 +378,9 @@ header .mobile-nav #mobile-cart-button {
   main #menu-desktop-image-container .menu-thumbnails-container {
     width: 90%;
   }
+  main #menu-desktop-image-container .menu-image-container {
+    position: relative;
+  }
   main #menu-desktop-image-container #menu-exit {
     margin-left: auto;
     margin-bottom: 1em;
@@ -303,7 +390,6 @@ header .mobile-nav #mobile-cart-button {
   main #menu-desktop-image-container #menu-previous, main #menu-desktop-image-container #menu-next {
     position: absolute;
     margin: auto 0;
-    margin-bottom: 100%;
     top: 0;
     bottom: 0;
     width: 10px;
@@ -340,6 +426,9 @@ header .mobile-nav #mobile-cart-button {
     height: 100%;
   }
   main .thumbnail-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 0.5em;
     overflow: hidden;
   }
@@ -364,6 +453,13 @@ header .mobile-nav #mobile-cart-button {
     width: 16%;
   }
 }
+@media screen and (min-width: 1000px) and (max-height: 650px) {
+  #menu-desktop-image-container {
+    position: fixed;
+    top: 0;
+    bottom: -100%;
+  }
+}
 footer {
   position: fixed;
   bottom: 0;
@@ -376,6 +472,7 @@ footer {
   main {
     height: auto;
     padding-top: 2em;
+    max-width: 1440px;
   }
 }
 
