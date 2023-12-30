@@ -1,4 +1,5 @@
-const cartDisplayValue = document.getElementById("cart-value")
+const cartDisplayValue = document.getElementById("cart-value");
+const price = 125.00;
 document.getElementById("increase").addEventListener("click", ()=>{cartValue(true)});
 document.getElementById("decrease").addEventListener("click", ()=>{cartValue(false)});
 let cartDisplay = 0;
@@ -148,7 +149,7 @@ function updateCart() {
         document.getElementsByClassName("num")[i].innerText = cartItems;
     }
     document.getElementById("cart-product-quantity").innerText = cartItems;
-    document.getElementById("cart-product-total").innerText = "$" + cartItems * 125;
+    document.getElementById("cart-product-total").innerText = "$" + (cartItems * price) + (price % 1 == 0 ? ".00" : "");
 }
 
 function deleteItems() {

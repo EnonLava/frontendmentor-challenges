@@ -25,7 +25,7 @@ body {
 }
 
 .active {
-  border: hsl(26, 100%, 55%) 3px solid;
+  outline: 3px solid hsl(26, 100%, 55%);
   position: relative;
   background-color: #FFF;
 }
@@ -106,6 +106,7 @@ header #cart-window .cart-product-title-container {
   height: 50px;
   justify-content: space-between;
   align-items: center;
+  color: hsl(219, 9%, 45%);
 }
 header #cart-window .cart-product-image {
   height: 100%;
@@ -141,6 +142,15 @@ header #cart-window .checkout-button {
   cursor: pointer;
 }
 header #cart-window #delete {
+  cursor: pointer;
+}
+header #cart-window #cart-product-total {
+  font-weight: 700;
+  color: #000;
+}
+header .avatar:hover {
+  outline: 2px solid hsl(26, 100%, 55%);
+  border-radius: 50%;
   cursor: pointer;
 }
 
@@ -313,7 +323,7 @@ header #cart-window #delete {
     width: 70%;
     height: 100px;
     margin: 0 auto;
-    border-bottom: 1px solid hsla(0, 0%, 0%, 0.75);
+    border-bottom: 1px solid hsla(219, 9%, 45%, 0.3);
   }
   header #cart-window {
     right: 15%;
@@ -334,6 +344,7 @@ header #cart-window #delete {
     cursor: pointer;
   }
   header .desktop-nav .nav-button:hover {
+    margin-top: 2px;
     border-bottom: 2px solid hsl(26, 100%, 55%);
   }
   header .desktop-nav .avatar {
@@ -386,6 +397,7 @@ header #cart-window #delete {
     margin-bottom: 1em;
     filter: brightness(0) invert(1);
     scale: 1.5;
+    cursor: pointer;
   }
   main #menu-desktop-image-container #menu-previous, main #menu-desktop-image-container #menu-next {
     position: absolute;
@@ -409,11 +421,10 @@ header #cart-window #delete {
     right: calc(-5px - 1em);
   }
   main .main-image {
-    margin-bottom: 1em;
-  }
-  main .main-image {
     border-radius: 0.5em;
     width: 100%;
+    margin-bottom: 1em;
+    cursor: pointer;
   }
   main .thumbnails-container {
     display: flex;
@@ -424,6 +435,10 @@ header #cart-window #delete {
   main .thumbnail {
     width: 100%;
     height: 100%;
+    cursor: pointer;
+  }
+  main .thumbnail:hover {
+    filter: opacity(0.5);
   }
   main .thumbnail-container {
     display: flex;
@@ -473,6 +488,9 @@ footer {
     height: auto;
     padding-top: 2em;
     max-width: 1440px;
+  }
+  #menu-desktop-image-container {
+    margin-top: 6em !important;
   }
 }
 
