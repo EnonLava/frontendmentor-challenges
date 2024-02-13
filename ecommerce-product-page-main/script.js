@@ -1,5 +1,6 @@
 const cartDisplayValue = document.getElementById("cart-value");
 const price = 125.00;
+const desktopWidth = 1000;
 document.getElementById("increase").addEventListener("click", ()=>{cartValue(true)});
 document.getElementById("decrease").addEventListener("click", ()=>{cartValue(false)});
 let cartDisplay = 0;
@@ -32,7 +33,7 @@ let emptyCart = document.getElementById("cart-empty");
 let isMobile = true;
 
 document.getElementById("overlay").addEventListener("click", ()=> {
-    if (window.screen.width > 1000) {
+    if (window.screen.width > desktopWidth) {
         toggleMenu();
     }else {
         toggleFloat();
@@ -95,10 +96,10 @@ function toggleCartMenu() {
 
 function resizeCheck() {
     if (overlay.style.display == "block") {
-        if (window.screen.width > 1000 && floatMenu.style.display == "block") {
+        if (window.screen.width > desktopWidth && floatMenu.style.display == "block") {
             floatMenu.style.display = "none";
             overlay.style.display = "none";
-        }else if (window.screen.width < 1000 && desktopMenu.style.display == "flex") {
+        }else if (window.screen.width < desktopWidth && desktopMenu.style.display == "flex") {
             desktopMenu.style.display = "none";
             overlay.style.display = "none";
         }
