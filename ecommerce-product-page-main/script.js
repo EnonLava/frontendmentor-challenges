@@ -31,7 +31,13 @@ document.getElementById("mobile-cart-button").addEventListener("click", ()=>{tog
 let emptyCart = document.getElementById("cart-empty");
 let isMobile = true;
 
-
+document.getElementById("overlay").addEventListener("click", ()=> {
+    if (window.screen.width > 1000) {
+        toggleMenu();
+    }else {
+        toggleFloat();
+    }
+})
 document.getElementById("add-to-cart").addEventListener("click", ()=>{addToCart()});
 document.getElementById("delete").addEventListener("click", ()=>{deleteItems()});
 

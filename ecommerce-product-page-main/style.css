@@ -181,6 +181,7 @@ header .avatar:hover {
 #mobile-float-menu .float-button {
   margin: 1em 0;
   font-weight: 700;
+  cursor: pointer;
 }
 
 .desktop-image-container {
@@ -356,20 +357,21 @@ header .avatar:hover {
     justify-content: center;
     align-items: center;
     height: calc(100% - 101px);
-    width: 60%;
+    width: 80%;
     margin: 0 auto;
   }
   main .content-container {
     display: flex;
     justify-content: center;
     align-items: center;
+    max-width: 500px;
   }
   main .mobile-image-container {
     display: none;
   }
   main .desktop-image-container {
     display: block;
-    flex-basis: 1fr;
+    min-width: 300px;
   }
   main #menu-desktop-image-container {
     display: none;
@@ -491,6 +493,11 @@ footer {
   }
   #menu-desktop-image-container {
     margin-top: 6em !important;
+  }
+}
+@media screen and (min-width: 1200px) {
+  main {
+    width: 60%;
   }
 }
 
