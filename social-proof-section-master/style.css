@@ -104,6 +104,14 @@ body {
     color: var(--soft-pink);
 }
 
+.attribution-container {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 @media (min-width: 1200px){
     body {
         padding: 3em;
